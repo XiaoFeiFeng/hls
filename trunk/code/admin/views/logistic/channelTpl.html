@@ -1,0 +1,21 @@
+<div class="container-fliud" ng-controller="logisticChannelTplCtrl">
+    <div class="page-content">
+        <p style="margin:15px;"><strong>总条数：<i
+                style="color:#D9534F;font-size:15px;">{{tableParams.total()}}</i></strong></p>
+        <table ng-table="tableParams" class="table mt25" show-filter="true" style="margin-top:25px;">
+            <tr ng-repeat="data in $data"
+                    >
+                <td data-title="'序号'" ng-bind="$index+1"></td>
+                <td data-title="'渠道名称'" ng-bind="data.channel_name" sortable="'channel_name'"
+                    filter="{'channel_name': 'text'}"></td>
+                <td data-title="'渠道代码'" ng-bind="data.channel_code" sortable="'channel_code'"
+                    filter="{'channel_code': 'text'}"></td>
+                <td data-title="'物流商名称'" ng-bind="data.channel_logId.name" sortable="'channel_logId.name'"
+                    filter="{'channel_logId': 'text'}"></td>
+                <td data-title="'操作'">
+                    <a href="" ng-click="delData(data._id)">删除</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

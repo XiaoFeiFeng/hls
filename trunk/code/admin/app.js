@@ -1,0 +1,184 @@
+/**
+ * Created by fengxiaofei on 2015/12/4.
+ */
+'use strict'
+var remoteUrl = 'http://192.168.100.150/';
+
+require.config({
+
+    baseUrl: "../admin/",
+
+    // alias libraries paths
+    paths: {
+        'jquery': remoteUrl + 'jquery/dist/jquery.min',
+        'angular': remoteUrl + 'angular/angular',
+        'uiRouter': remoteUrl + 'angular-ui-router/release/angular-ui-router',
+        'angularAMD': remoteUrl + 'angularAMD/angularAMD',
+        'ngload': remoteUrl + 'angularAMD/ngload',
+        'blockUI': remoteUrl + 'angular-block-ui/dist/angular-block-ui.min',
+        'bootstrap': remoteUrl + 'bootstrap/dist/js/bootstrap',
+        'ngStrap': remoteUrl + 'angular-strap/dist/angular-strap',
+        'agStraptpl': remoteUrl + 'angular-strap/dist/angular-strap.tpl',
+        'angular-sanitize': remoteUrl + 'angular-sanitize/angular-sanitize',
+        'ui-bootstrap': remoteUrl + 'ui-bootstrap/ui-bootstrap-tpls',
+        'moment': remoteUrl + 'moment/moment',
+        'locale': remoteUrl + 'moment/locale/zh-cn',
+        'datetimepicker': remoteUrl + 'angular-bootstrap-datetimepicker/src/js/datetimepicker',
+        'ng-table': remoteUrl + 'ng-table/dist/ng-table.min',
+        'ueditor': remoteUrl + 'ueditor/ueditor.all',
+        'ueditor-config': remoteUrl + 'ueditor/ueditor.config',
+        'ng-ueditor': remoteUrl + 'angular-ueditor/dist/angular-ueditor',
+        'select2': remoteUrl + 'select2/dist/js/select2',
+        'hls-core': '../common/js/hls/hls-core',
+        'hls-util': '../common/js/hls/hls-util',
+        'hls-ui': '../common/js/hls/hls-ui',
+        'demoApp': 'js/app'
+    },
+    map: {
+        '*': {
+            'css': remoteUrl + 'require-css/css.js'
+        }
+    },
+    // Add angular modules that does not support AMD out of the box, put it in a shim
+    shim: {
+        "angular": {exports: "angular"},
+        'angularAMD': ['angular'],
+        'uiRouter': ["angular"],
+        'ngLoad': ["angularAMD"],
+        'ui-bootstrap': ['angular'],
+        'angular-sanitize': ['angular'],
+        'agStraptpl': ['angular'],
+        'ng-table': ['angular',
+            'css!' + remoteUrl + 'ng-table/dist/ng-table.min.css'
+        ],
+        'ngStrap': ['agStraptpl', 'angular',
+            'css!' + remoteUrl + 'bootstrap/dist/css/bootstrap.css',
+            'css!' + remoteUrl + 'font-awesome/css/font-awesome.css'
+        ],
+        'blockUI': ['angular',
+            'css!' + remoteUrl + 'angular-block-ui/dist/angular-block-ui.css'],
+        'bootstrap': ['jquery',
+            'css!' + remoteUrl + 'bootstrap/dist/css/bootstrap.css',
+            'css!' + remoteUrl + 'bootstrap/dist/css/bootstrap-theme.css',
+            'css!' + remoteUrl + 'font-awesome/css/font-awesome.css'],
+        'datetimepicker': [
+            'css!' + remoteUrl + 'angular-bootstrap-datetimepicker/src/css/datetimepicker.css'
+        ],
+        'select2': ['angular', 'css!' + remoteUrl + 'select2/dist/css/select2.min.css'],
+        'ng-ueditor': ['ueditor', 'ueditor-config',
+            'css!' + remoteUrl + 'angular-bootstrap-datetimepicker/src/css/datetimepicker.css'
+        ],
+        'hls-ui': ['hls-core',
+            'css!../admin/css/hls-ui.css'
+        ],
+        'hls-util': ['hls-ui'],
+        'demoApp': ['jquery',
+            'css!../admin/css/AdminLTE.min.css',
+            'css!../admin/css/skins/_all-skins.min.css']
+    }
+});
+
+define(['angular', 'angularAMD', 'uiRouter', 'blockUI', 'bootstrap', 'ui-bootstrap', 'angular-sanitize', 'ng-table', 'hls-util', 'demoApp'], function (angular, angularAMD, blockUI) {
+    // routes
+    var registerRoutes = function ($stateProvider, $urlRouterProvider) {
+        var jsResolve = {
+            load: ['$q', '$rootScope', '$stateParams',
+                function ($q, $rootScope, $stateParams) {
+
+                    if ($stateParams.length == 0) {
+                        return null;
+                    }
+                    var path = './views/' + $stateParams.module + "/" + $stateParams.action;
+                    var deferred = $q.defer();
+                    require([path], function () {
+                        $rootScope.$apply(function () {
+                            deferred.resolve();
+                        });
+                    });
+                    return deferred.promise;
+                }]
+        };
+        // default
+        //$urlRouterProvider.otherwise("/tutorials/main");
+
+        // route
+        $stateProvider.state('module', {
+            url: "/{module}/{action}?{params}",
+            templateUrl: function ($scope) {
+                return 'views/' + $scope.module + '/' + $scope.action + '.html';
+            },
+            resolve: jsResolve
+        });
+    };
+    // module
+    var app = angular.module("indexModule", ["ui.router", 'blockUI', 'ui.bootstrap', 'ngSanitize', 'ngTable', 'hls.util']);
+
+    // config
+    app.config(["$stateProvider", "$urlRouterProvider", registerRoutes]);
+
+    app.config(function ($httpProvider) {
+        //$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        //$httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+    });
+
+    app.config(function (blockUIConfig) {
+        // Change the default overlay message
+        blockUIConfig.message = "请稍候...";
+        // Change the default delay to 100ms before the blocking is visible
+        blockUIConfig.delay = 100;
+        // Disable automatically blocking of the user interface
+        blockUIConfig.autoBlock = false;
+    });
+
+    app.controller('indexCtrl', ['$scope', '$request', function ($scope, $request) {
+
+        $scope.initData = function () {
+            function dataConvert(data) {
+                var roots = [];
+                var children = [];
+                angular.forEach(data, function (item) {
+                    if (item.pcode == 'root') {
+                        item.children = [];
+                        roots.push(item);
+                    } else {
+                        children.push(item);
+                    }
+                });
+                angular.forEach(children, function (child) {
+                    angular.forEach(roots, function (root) {
+                        if (child.pcode == root.code) {
+                            root.children.push(child);
+                            root.hasChild = true;
+                        }
+                    });
+                });
+                return roots;
+            }
+
+            $request.get('admin/data/?action=get_menus', function (response) {
+                if (response.success) {
+                    $scope.menus = dataConvert(response.data);
+                } else if (angular.isUndefined(response.success)) {
+                    $ui.error(response);
+                } else {
+                    $ui.error(response.error);
+                }
+            });
+        }
+
+        $scope.menuClick = function (item) {
+            if (!item.hasChild)
+                $scope.currentMenu = item;
+        }
+
+        $scope.initData();
+    }]);
+
+// bootstrap
+    return angularAMD.bootstrap(app);
+
+})
+;
+
+
+

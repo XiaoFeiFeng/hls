@@ -1,0 +1,49 @@
+<div class="row" ng-controller="">
+    <div class="col-md-8" style="border:1px solid #ccc;">
+
+        <h3>追踪你的运单</h3>
+        <ul class="row">
+            <li class="col-md-10">
+                <textarea class="form-control" rows="3" style="resize: none;" placeholder="请输入你要查询的订单号"></textarea>
+            </li>
+            <li class="col-md-2">
+                <button class="btn btn-default btn-lg">查询</button>
+            </li>
+        </ul>
+        <ul class="row">
+            <li class="col-md-1"><span class="glyphicon glyphicon-chevron-left"></span></li>
+            <li class="col-md-3 bg-info">运单号：123456789</li>
+            <li class="col-md-3">运单号：123456789</li>
+            <li class="col-md-3">运单号：123456789</li>
+            <li class="col-md-1"><span class="glyphicon glyphicon-chevron-right"></span></li>
+        </ul>
+        <ul class="text-left" style="position:relative;">
+            <ul class="text-center text-danger" style="position:absolute;left:-30px;top:0">
+                <li><span class="glyphicon glyphicon-certificate "></span></li>
+                <li>|</li>
+                <li><span class="glyphicon glyphicon-certificate "></span></li>
+                <li>|</li>
+                <li><span class="glyphicon glyphicon-certificate "></span></li>
+                <li>|</li>
+                <li><span class="glyphicon glyphicon-certificate "></span></li>
+                <li>|</li>
+                <li><span class="glyphicon glyphicon-certificate "></span></li>
+            </ul>
+            <li>本人已签收，感谢使用易联速递，期待再次为你服务。</li>
+            <li>2015-12-18 10：54</li>
+            <li>正在派件中（派件人：吴日文，电话：18218846438）</li>
+            <li>2015-12-18 08：30</li>
+            <li>快件已到达【海淀区服务中心】</li>
+            <li>2015-12-17 17：45</li>
+            <li>快件在【北京散集中心】，正转运至【海淀区服务中心】</li>
+            <li>2015-12-17 09：12</li>
+            <li>快件已到达【北京散集中心】</li>
+            <li>2015-12-17 08：00</li>
+        </ul>
+        <hls-pagination total-items="totalItems" ng-model="currentPage" class="pagination-sm"
+                        ng-change="pageChange()"></hls-pagination>
+    </div>
+    <div class="col-md-4">
+        <hls-include url="'views/quote/search.html'"/>
+    </div>
+</div>

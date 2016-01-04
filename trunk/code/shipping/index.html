@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>互联速物流平台</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="贸易宝 进销存系统 ERP系统 Ebay进销存 速卖通订单ERP 速卖通进销存 Amazon进销存 企业进销存定制 ERP系统定制 CpowerSoft.COM"/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="shortcut icon" href="img/icon/favicon.png">
+    <script data-main="app.js?ver=1.0.0.1" src="http://192.168.100.150/requirejs/require.js"></script>
+</head>
+<body class="index-body" ng-controller="indexCtrl">
+
+<div class="container text-center">
+    <div class="row clearfix">
+        <div class="col-md-2">
+            <img src="img/yiliansudi.png" class="yilian"/>
+        </div>
+        <div class="col-md-5">
+        </div>
+        <div class="col-md-5" style="line-height: 55px;">
+
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                <span>
+                    <a href="#">购物车（0）</a>&emsp;
+                    <a href="#">登录</a>&nbsp;| &nbsp;
+                    <a href="#">注册</a>
+                </span>
+            <a href="#" title="微信登录"><img src="img/icon/weixin.png"/></a>
+            <a href="#" title="QQ登录"><img src="img/icon/QQ.png"/></a>
+            <a href="#" title="速卖通登录"><img src="img/icon/Eliexpress.png"/></a>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <nav class="navbar navbar-default " role="navigation">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/home/index">首页</a></li>
+                    <li><a href="#/order/index">运单追踪</a></li>
+                    <li><a href="#/package/index">上门取件</a></li>
+                    <li><a href="#/merchants/index">物流商盟</a></li>
+                    <li><a href="#/news/index">新闻资讯</a></li>
+                    <li><a href="#/about/index">关于易联</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">控件测试 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#/test/city&country">城市选择</a></li>
+                            <li><a href="#/test/datetimepicker">日历控件</a></li>
+                            <li><a href="#/test/formvalidate">表单验证</a></li>
+                            <li><a href="#/test/page">分页控件</a></li>
+                            <li><a href="#/test/dialog">弹出框</a></li>
+                            <li><a href="#/test/index">跳转 传参 </a></li>
+                            <li><a href=" #/test/hlsInclude">hls 布局页</a></li>
+                            <li><a href=" #/test/grid">hls表格</a></li>
+                            <li><a href=" #/booking/index">下单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-md" placeholder="输入运单号可查询"/>
+                             <span class="input-group-btn">
+                                 <button type="button" class="btn btn-default btn-md" ng-click="">
+                                     <span class="glyphicon glyphicon-search text-info" aria-hidden="true"></span>
+                                     <span> 查询</span>
+                                 </button>
+                            </span>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="clearfix" ui-view></div>
+    <br/>
+
+    <div class="row">
+        <div class=" col-md-8">
+            <dl class="col-md-2">
+                <dt><a href="#">寄件查询</a></dt>
+                <dd><a href="#">上门收件</a></dd>
+                <dd><a href="#">货物查询</a></dd>
+                <dd><a href="#">运费查询</a></dd>
+                <dd><a href="#">网点查询</a></dd>
+            </dl>
+            <dl class="col-md-2">
+                <dt><a href="#">会员体系</a></dt>
+                <dd><a href="#">个人会员</a></dd>
+                <dd><a href="#">会员积分</a></dd>
+                <dd><a href="#">会员用途 </a></dd>
+            </dl>
+            <dl class="col-md-2">
+                <dt><a href="#">信息中心</a></dt>
+                <dd><a href="#">新闻资讯</a></dd>
+                <dd><a href="#">易联公告</a></dd>
+            </dl>
+            <dl class="col-md-2">
+                <dt><a href="#">帮助中心</a></dt>
+                <dd><a href="#">常见问题</a></dd>
+                <dd><a href="#">意见反馈</a></dd>
+            </dl>
+            <dl class="col-md-2">
+                <dt><a href="#">关于易联</a></dt>
+                <dd><a href="#">了解易联</a></dd>
+                <dd><a href="#">加入易联</a></dd>
+                <dd><a href="#">联系我们</a></dd>
+            </dl>
+            <dl class="col-md-2">
+                <dt><a href="#">关注我们</a></dt>
+                <dd><a href="#"><img src="img/93myb_wx_barcode.png" class="two-dimensional"></a></dd>
+            </dl>
+        </div>
+        <div class="col-md-2 ">
+            <ul>
+                <li><a href="#"><img src="img/footer-contact-icon_ef4928b5.png"></a></li>
+                <li>服务热线</li>
+                <li class="text-warning">0755-36601415</li>
+                <li>周一到周五9：00-18：00</li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+
+    <div class="row">
+        <p>
+            <small>
+                <span style="font-family:arial;">
+                      Copyright &copy;2011-2015 &emsp;www.e156.com 易联速递-国际物流商城 &emsp;©粤ICP备13010532号-1 CPowerSoft Inc.版权所有.
+                </span>
+            </small>
+        </p>
+    </div>
+    <br/>
+</div>
+
+</body>
+</html>

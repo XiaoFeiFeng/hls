@@ -1,0 +1,181 @@
+<style>
+    .hls-label {
+        background-color: #777;
+        margin: 8px;
+        padding: 8px;
+        cursor: pointer;
+        display: inline;
+        font-size: 75%;
+        font-weight: bold;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25em;
+    }
+
+    .hls-detail-td {
+        border-top: 0px;
+        height: 0px;;
+        padding: 0px !important;
+        margin: 0;
+    }
+
+    .hls-btnactive {
+        color: orange;
+    }
+
+    .quotetd {
+        width: 10%;
+    }
+</style>
+<div class="container" ng-controller="quoteListCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed text-left">
+                <tbody>
+                <tr>
+                    <td style="min-width:100px">
+                        <label>您已选择：</label>
+                    </td>
+                    <td colspan="3">
+                        <div class="hls-label"
+                             ng-repeat="item in filter" ng-if="item.isShow" ng-click="filterClick(item)">
+                            <span ng-bind="item.disKey + item.name"></span>
+                            &nbsp; <span>&times;</span>
+                        </div>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <!--<td><label>起运城市：</label></td>-->
+                    <!--<td>-->
+                    <!--<hls-city hls-data="cityData" hls-class="form-control"-->
+                    <!--hls-placeholder="请选择出发地，例如：深圳市"></hls-city>-->
+                    <!--</td>-->
+                    <td class="quotetd"><label>目的国家：</label></td>
+                    <td>
+                        <hls-country hls-data="countryData" hls-class="form-control"
+                                     hls-placeholder="请选择出发地，例如：美国"></hls-country>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="quotetd">
+                        <label>重量(KG)：</label>
+                    </td>
+                    <td>
+                        <input class="form-control" ng-model="weight" ng-change="weightChange()"/>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!--<tr>-->
+                <!--<td class="quotetd"><label>物品种类：</label></td>-->
+                <!--<td colspan="3">-->
+                <!--<button ng-repeat="item in resTypes" type="button" ng-class="{'hls-btnactive':item.isActive}"-->
+                <!--class="btn btn-link" ng-click="resTypeChange(item)">-->
+                <!--<span ng-bind="item.name"></span>-->
+                <!--</button>-->
+                <!--</td>-->
+                <!--</tr>-->
+                <tr>
+                    <td class="quotetd"><label>运输类型：</label></td>
+                    <td colspan="3">
+                        <button ng-repeat="item in transTypes" type="button" ng-class="{'hls-btnactive':item.isActive}"
+                                class="btn btn-link" ng-click="transTypeChange(item,'transtype')">
+                            <span ng-bind="item.name"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="quotetd"><label>运输方式：</label></td>
+                    <td colspan="3">
+                        <button ng-repeat="item in transWays" type="button" ng-class="{'hls-btnactive':item.isActive}"
+                                class="btn btn-link" ng-click="transWayChange(item)">
+                            <span ng-bind="item.name"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-center">
+                        <button type="button" class="btn btn-warning" ng-click="getFee('button')">
+                            <span style="font-size: 20px">查价下单</span>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br/>
+            <table class="table table-hover table-striped table-condensed text-left">
+                <caption>排序：
+                    <div class="btn-group">
+                        <button ng-if="priceDesc" class="btn btn-default" type="button" ng-click="dataSort('sum',true)">
+                            <em class="glyphicon glyphicon-arrow-down"></em>
+                            价格
+                        </button>
+                        <button ng-if="!priceDesc" class="btn btn-default" type="button"
+                                ng-click="dataSort('sum',false)">
+                            <em class="glyphicon glyphicon-arrow-up"></em>
+                            价格
+                        </button>
+                        <button class="btn btn-default" type="button" ng-click="dataSort('transportWayCName',false)">
+                            <em class="glyphicon glyphicon-arrow-down"></em>
+                            销量
+                        </button>
+                        <button class="btn btn-default" type="button" ng-click="dataSort('transportWayCName',true)">
+                            <em class="glyphicon glyphicon-arrow-up"></em>
+                            销量
+                        </button>
+                    </div>
+                </caption>
+                <thead>
+                <tr>
+                    <th>渠道代码 <span class="icon-arrow-down"> </span></th>
+                    <th>渠道名称</th>
+                    <th>目的地</th>
+                    <th>时长</th>
+                    <th>重量</th>
+                    <th>价格</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in feeResult">
+                    <td><span ng-bind="item.transportWayCode"></span></td>
+                    <td><span ng-bind="item.transportWayCName"></span></td>
+                    <td><span ng-bind="outCountry"></span></td>
+                    <td><span ng-bind="item.deliveryPeriod"></span></td>
+                    <td><span ng-bind="weight+'KG'"></span></td>
+                    <td><span style="color:red" ng-bind="'￥ '+item.sum"></span></td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="collapse"
+                                data-target="#collapse{{$index}}">
+                            详情
+                        </button>
+                        <button type="button" class="btn btn-warning">
+                            下单
+                        </button>
+                    </td>
+                    <td class="hls-detail-td">
+                        <div id="collapse{{$index}}" class="collapse" style="padding: 8px; min-height:100px">
+                            Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                            vice lomo.
+                        </div>
+                    </td>
+                </tr>
+                <tr ng-if="FeeHasError">
+                    <td class="text-center" colspan="7">
+                        <h3><span ng-bind="FeeError"></span></h3>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br/>
+        </div>
+    </div>
+</div>
