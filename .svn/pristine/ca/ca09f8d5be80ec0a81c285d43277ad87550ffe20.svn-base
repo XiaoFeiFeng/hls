@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-8">
+        <div style="border:1px solid #ccc;">
+            <table class="table text-left" style="border: 0">
+                <tr>
+                    <th colspan="2">新闻资讯</th>
+                </tr>
+                <tr>
+                    <td width="80%">电信、联通牵手：4G网络覆盖不佳可用对方网络</td>
+                    <td>2015-12-16</td>
+                </tr>
+                <tr>
+                    <td>老百姓离医疗“互联网”还有多远</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td>世界互联网大会：清秀礼仪身着青花瓷旗袍亮相</td>
+                    <td>2015-12-14</td>
+                </tr>
+                <tr>
+                    <td>5G到底怎么玩？《IT时报》独家连线英国5G创新中心揭秘</td>
+                    <td>2015-12-13</td>
+                </tr>
+                <tr>
+                    <td>HTML5受全民追捧 变现模式渐显</td>
+                    <td>2015-12-12</td>
+                </tr>
+                <tr>
+                    <td>电信、联通牵手：4G网络覆盖不佳可用对方网络</td>
+                    <td>2015-12-16</td>
+                </tr>
+                <tr>
+                    <td>老百姓离医疗“互联网”还有多远</td>
+                    <td>2015-12-15</td>
+                </tr>
+                <tr>
+                    <td>​实地探访 华强北：5分钟造出一台 “ iPhone 6s</td>
+                    <td>2015-12-12</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hls-pagination total-items="totalItems" ng-model="currentPage" class="pagination-sm"
+                                        ng-change="pageChange()"></hls-pagination>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <hls-include url="'views/quote/search.html'"/>
+    </div>
+</div>

@@ -1,0 +1,193 @@
+<div class="text-left">
+    <ul class="row" style="border:1px solid #ccc;padding:8px;">
+        <li class="col-md-3">订单编号：<span>hls123456789</span></li>
+        <li class="col-md-9">运单编号：<input type="text"></li>
+    </ul>
+    <p><b>订单信息</b></p>
+    <table border="1" width="100%">
+        <tr>
+            <td width="13%"  class="text-right">起运城市：</td>
+            <td width="20%">深圳市</td>
+            <td width="13%"  class="text-right">目的国家：</td>
+            <td width="20%">爱尔兰</td>
+            <td width="13%"  class="text-right">运输类型：</td>
+            <td width="20%">国际快递</td>
+        </tr>
+        <tr>
+            <td  class="text-right">运输方式：</td>
+            <td>DHL</td>
+            <td  class="text-right">重量（kg）：</td>
+            <td>1.00</td>
+            <td  class="text-right">货物类型：</td>
+            <td>包裹</td>
+        </tr>
+        <tr>
+            <td class="text-right">估计运费：</td>
+            <td colspan="5" class="text-danger">￥：99.00</td>
+        </tr>
+    </table>
+    <br/>
+    <p><b>寄件人信息</b></p>
+    <table border="1" width="100%" class="text-right">
+        <tr>
+            <td width="13%"><span class="glyphicon glyphicon-asterisk text-danger"></span>联系人：</td>
+            <td width="20%"><input type="text" class="form-control"></td>
+            <td width="13%">&emsp;公司名：</td>
+            <td colspan="3"><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>联系方式：</td>
+            <td><input type="text" class="form-control"></td>
+            <td>&emsp;邮箱：</td>
+            <td><input type="text" class="form-control"></td>
+            <td>&emsp;邮编：</td>
+            <td><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>国家：</td>
+            <td><input type="text" class="form-control"></td>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>所属地区：</td>
+            <td><input type="text" class="form-control"></td>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>城市：</td>
+            <td><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>详细地址：</td>
+            <td colspan="5"><input type="text" class="form-control"></td>
+        </tr>
+    </table>
+    <br/>
+    <div>
+        <button class="btn btn-default">保存信息</button>&emsp;&emsp;&emsp;
+        <a href="#">收起寄件人<span class="glyphicon glyphicon-menu-up"></span></a>
+    </div>
+    <br/>
+    <div class="row" style="border:1px solid #ccc;padding:8px;">
+        <span class="col-md-2 text-center">张三</span>
+        <span class="col-md-10">张三 中国 广东省 深圳市 朗山二号路3号互联易电商园三楼互联速公司 18218846438</span>
+    </div>
+    <br>
+    <div class="row" style="border:1px solid #ccc;padding:8px;">
+        <span class="col-md-2 text-center">张三</span>
+        <span class="col-md-10">张三 中国 广东省 深圳市 朗山二号路3号互联易电商园三楼互联速公司 18218846438</span>
+    </div>
+    <br>
+    <div class="row" style="border:1px solid #ccc;padding:8px;">
+        <span class="col-md-2 text-center">张三</span>
+        <span class="col-md-10">张三 中国 广东省 深圳市 朗山二号路3号互联易电商园三楼互联速公司 18218846438</span>
+    </div>
+    <br>
+    <p><b>收件人信息</b></p>
+    <table border="1" width="100%" class="text-right">
+        <tr>
+            <td width="13%"><span class="glyphicon glyphicon-asterisk text-danger"></span>联系人：</td>
+            <td width="20%"><input type="text" class="form-control"></td>
+            <td width="13%">公司名：</td>
+            <td colspan="3"><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>联系方式：</td>
+            <td><input type="text" class="form-control"></td>
+            <td>邮箱：</td>
+            <td><input type="text" class="form-control"></td>
+            <td>邮编：</td>
+            <td><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>国家：</td>
+            <td><input type="text" class="form-control"></td>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>省/洲：</td>
+            <td><input type="text" class="form-control"></td>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>城市：</td>
+            <td><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>详细地址：</td>
+            <td colspan="5"><input type="text" class="form-control"></td>
+        </tr>
+    </table>
+    <br/>
+    <div>
+        <button class="btn btn-default">保存信息</button>&emsp;&emsp;&emsp;
+        <a href="#">选择收件人<span class="glyphicon glyphicon-menu-down"></span></a>
+    </div>
+    <br/>
+    <p><b>海关申报信息</b></p>
+    <table border="1" width="100%" class="text-right">
+        <tr>
+            <td width="13%">物品类型：</td>
+            <td width="20%">
+                <input list="cars" class="form-control" placeholder="选择物品类型"/>
+                <datalist id="cars">
+                    <option value="文件类">
+                    <option value="电子类">
+                    <option value="食品类">
+                    <option value="服装类">
+                    <option value="五金电料类">
+                    <option value="家具类">
+                    <option value="家用电器类">
+                    <option value="日常用品类">
+                </datalist>
+            </td>
+            <td width="13%">内容描述：</td>
+            <td colspan="3"><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>英文品名：</td>
+            <td><input type="text" class="form-control"></td>
+            <td>中文品名：</td>
+            <td><input type="text" class="form-control"></td>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>净重（kg）：</td>
+            <td><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>申报数量：</td>
+            <td><input type="text" class="form-control"></td>
+            <td>申报单位：</td>
+            <td>
+                <input list="unit" class="form-control" placeholder="选择物品单位"/>
+                <datalist id="unit">
+                    <option value="件">
+                    <option value="个">
+                    <option value="包">
+                    <option value="盒">
+                    <option value="条">
+                    <option value="盏">
+                    <option value="台">
+                    <option value="对">
+                    <option value="扇">
+                    <option value="卷">
+                    <option value="张">
+                </datalist>
+            </td>
+            <td><span class="glyphicon glyphicon-asterisk text-danger"></span>申报价格：</td>
+            <td><input type="text" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>海关编号：</td>
+            <td><input type="text" class="form-control"></td>
+            <td>配货备注：</td>
+            <td colspan="3"><input type="text" class="form-control"></td>
+        </tr>
+    </table>
+    <br/>
+    <div>
+        <button class="btn btn-default">保存信息</button>&emsp;&emsp;&emsp;
+        <a href="#">选择报关明细<span class="glyphicon glyphicon-menu-down"></span></a>
+    </div>
+    <br/>
+    <table border="1" width="100%">
+        <tr>
+            <td width="13%"  class="text-right">物品类型：</td>
+            <td width="87%"><textarea rows="3" cols="50"></textarea></td>
+        </tr>
+    </table>
+    <br/>
+    <div class="text-center">
+        <button type="button" class="btn btn-warning btn-lg">确认下单</button>&emsp;&emsp;
+        <button type="button" class="btn btn-default btn-lg">保存信息</button>&emsp;&emsp;
+        <button type="button" class="btn btn-default btn-lg">返回</button>
+    </div>
+    <br/>
+    <br/>
+</div>

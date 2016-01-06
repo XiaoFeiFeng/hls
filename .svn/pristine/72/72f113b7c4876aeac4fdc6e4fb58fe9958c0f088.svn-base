@@ -1,0 +1,91 @@
+<div class="row">
+
+    <div class="col-md-8">
+        <div class="col-md-11" style="border:1px solid #ccc;">
+           <h4><b>申请成为物流商，加入物流商盟</b></h4>
+            <table border="1" style="font-size:13px;" bordercolor="#ccc">
+                <tr>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>公司名称:</td>
+                    <td colspan="3"><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td width="20%"><span class="glyphicon glyphicon-asterisk text-danger"></span>公司类型:</td>
+                    <td width="30%"><input type="text" class="form-control"></td>
+                    <td width="20%"><span class="glyphicon glyphicon-asterisk text-danger"></span>法人代表:</td>
+                    <td width="30%"><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>公司规模:</td>
+                    <td>
+                        <input list="cars" class="form-control" placeholder="选择公司人数"/>
+                        <datalist id="cars">
+                            <option value="50人以下">
+                            <option value="50人-100人">
+                            <option value="100人-500人">
+                            <option value="500人-1500人">
+                            <option value="1500人以上">
+                        </datalist>
+                    </td>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>注册帐号:</td>
+                    <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>申请人:</td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>申请人职位:</td>
+                    <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>联系电话:</td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>成立时间:</td>
+                    <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>联系地址:</td>
+                    <td colspan="3"><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-asterisk text-danger"></span>上传证件:</td>
+                    <td colspan="2">
+                        <p><input type="file" name="img" multiple="multiple"/></p>
+                        <p>文件最大不能超过2M，最多上传3个</p>
+                        支持.jpg、.jpeg、.gif、.png、.bmp、
+                        .pic、.doc、.docx、.rar、.xls、.xlsx、
+                        .TIFF、.paf、.zip格式
+                    </td>
+                    <td>
+                        <div class="clearfix">
+                            <span class="pull-left">文件名</span>
+                            <span class="pull-right">操作</span>
+                        </div>
+                        <div class="alert alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            a.jpg
+                        </div>
+                        <div class="alert alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            b.jpg
+                        </div>
+                        <div class="alert alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            c.jpg
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="text-center">
+                <button class="btn btn-warning btn-lg">申请</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <hls-include url="'views/quote/search.html'"/>
+    </div>
+
+</div>
+

@@ -1,0 +1,16 @@
+<div class="container-fliud" ng-controller="logistricProTplCtrl">
+    <div class="page-content">
+        <p style="margin:15px;"><strong>总条数：<i
+                style="color:#D9534F;font-size:15px;">{{tableParams.total()}}</i></strong></p>
+        <table ng-table="tableParams" class="table" show-filter="true" style="margin-top:25px;">
+            <tr ng-repeat="data in $data">
+                <td data-title="'序号'" ng-bind="$index+1"></td>
+                <td data-title="'name'" ng-bind="data.name" sortable="'name'" filter="{'name': 'text'}"></td>
+                <td data-title="'code'" ng-bind="data.code" sortable="'code'" filter="{'code': 'text'}"></td>
+                <td data-title="'操作'">
+                    <a href="" ng-click="delData(data._id)">删除</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
