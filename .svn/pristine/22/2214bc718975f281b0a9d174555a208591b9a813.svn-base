@@ -1,0 +1,54 @@
+<div ng-controller="userLoginCtrl">
+    <form name="userLoginForm" class="container-fluid">
+        <div>
+            <h2><strong>基本验证信息</strong></h2>
+        </div>
+        <hr/>
+        <div class="container-fluid form-horizontal">
+            <div class="row">
+                <label for="name" class="control-label col-md-1">用户名</label>
+
+                <div class="col-md-3">
+                    <input id="name" type="text" name="name" class="form-control input-lg" placeholder="请输入用户名"
+                           ng-model="user.name"
+                           required dir-directive-ext/>
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-1">密码</label>
+
+                <div class="col-md-3">
+                    <input type="password" name="password" class="form-control input-lg" placeholder="密码"
+                           ng-model="user.password"
+                           required requiredmsg="请输入密码"
+                           ng-minlength="6" minlengthmsg="密码最小长度为6位" dir-directive-ext>
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-1">验证码</label>
+
+                <div class="col-md-3">
+                    <div class="col-md-6 no-padding">
+                        <input type="text" name="checkimg" class="form-control input-lg" placeholder="验证码"
+                               ng-model="user.img"
+                               required requiredmsg="请输入验证码" dir-directive-ext>
+                    </div>
+                    <div class="col-md-6 no-padding v-center">
+                        <img class="img-rounded cursor-hand" ng-click="checkImgChange()" src="{{checkImgSrc}}"
+                             title="看不清楚，点击换一张">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="pull-right btn-lg">
+                <button type="button" class="btn btn-default" ng-disabled="userLoginForm.$invalid" ng-click="login()">
+                    <span class="glyphicon glyphicon-ok text-success"></span> 登录
+                </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+</div>
