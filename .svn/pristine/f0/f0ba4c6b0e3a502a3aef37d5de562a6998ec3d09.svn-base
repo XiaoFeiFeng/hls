@@ -1,0 +1,43 @@
+<div>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-1"><img src="img/yiliansudi.png" class="yilian"/></div>
+        <div class="col-md-2 form-title">欢迎注册</div>
+    </div>
+    <br>
+    <br>
+    <div class="col-md-5 col-md-offset-4 form-border">
+        <form action="">
+            <div class="form-group">
+                <label class="col-md-3 control-label register-label"> <span class="bg-red">*</span> 用户名:</label>
+                <div class="col-md-8"><input type="text" class="form-control"></div>
+            </div><br><br><br>
+            <div class="form-group">
+                <label class="col-md-3 control-label register-label"><span class="text-danger">*</span> 登录密码:</label>
+                <div class="col-md-8"><input type="password" class="form-control"></div>
+            </div><br>
+            <div class="col-md-offset-3 col-md-8 text-right">
+                <small>安全程度:
+                    <span class="strength">弱</span>&nbsp;
+                    <span class="strength">中</span>&nbsp;
+                    <span class="strength">强</span>
+                </small>
+            </div><br/><br/>
+            <div class="form-group">
+                <label class="col-md-3 control-label register-label"><span class="text-danger">*</span> 确认密码:</label>
+                <div class="col-md-8"><input type="password" class="form-control"></div>
+            </div><br><br>
+            <div class="form-group">
+                <label class="col-md-3 control-label register-label"><span class="text-danger">*</span> 手机验证:</label>
+                <div class="col-md-3"><input type="text" class="form-control"></div>
+                <div class="col-md-4 pt10"><a href="#">免费获取验证码</a></div>
+            </div><br><br>
+            <div class="col-md-offset-3 text-left pl-15">
+                <input type="checkbox">
+                <small>我已阅读并同意《<a href="#">易联速递用户注册协议</a>》</small>
+            </div><br>
+            <div class="col-md-offset-3 col-md-8">
+                <button type="submit" class="btn btn-info btn-block">立即注册</button>
+            </div>
+        </form>
+    </div>
+</div>
