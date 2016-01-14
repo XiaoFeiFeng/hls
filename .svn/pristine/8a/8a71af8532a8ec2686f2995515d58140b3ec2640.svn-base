@@ -1,0 +1,46 @@
+<div ng-controller="testFileUploadCtrl">
+    <div class="container kv-main">
+        <form>
+            <div class="form-group">
+                <div class="file-preview ">
+                    <div class="close fileinput-remove">×</div>
+                    <div class=" file-drop-zone">
+                        <div class="file-drop-zone-title">拖拽文件到这里 …</div>
+                        <div class="file-preview-thumbnails"></div>
+                        <div class="clearfix"></div>
+                        <div class="file-preview-status text-center text-success"></div>
+                        <div class="kv-fileinput-error file-error-message" style="display: none;"></div>
+                    </div>
+                </div>
+                <div class="kv-upload-progress hide"></div>
+                <div class="input-group ">
+                    <div tabindex="-1" class="form-control file-caption  kv-fileinput-caption">
+                        <span class="file-caption-ellipsis">…</span>
+                        <div class="file-caption-name"></div>
+                    </div>
+                    <div class="input-group-btn">
+                        <button type="button" title="清除选中文件"
+                                class="btn btn-default fileinput-remove fileinput-remove-button"><i
+                                class="glyphicon glyphicon-trash"></i> 移除
+                        </button>
+                        <button type="button" title="取消进行中的上传"
+                                class="hide btn btn-default fileinput-cancel fileinput-cancel-button"><i
+                                class="glyphicon glyphicon-ban-circle"></i> 取消
+                        </button>
+                        <a href="#" title="上传选中文件"
+                           class="btn btn-default kv-fileinput-upload fileinput-upload-button"><i
+                                class="glyphicon glyphicon-upload"></i> 上传</a>
+                        <div class="btn btn-primary btn-file"><i class="glyphicon glyphicon-folder-open"></i> &nbsp;选择 …
+                            <input
+                                    id="file-1" type="file" multiple="" class="file" data-overwrite-initial="false"
+                                    data-min-file-count="2">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>

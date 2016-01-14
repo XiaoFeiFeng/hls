@@ -1,7 +1,0 @@
-# BEGIN 
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteRule ^(.*)\.do $1\.php 
-</IfModule>
-
-# END 
