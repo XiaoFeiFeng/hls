@@ -1,0 +1,84 @@
+<div class="myyilian">
+    <div>
+        我现在所在的位置&emsp;-&emsp;
+        <a href="#/myYiLian/index" class="font-orange">我的易联</a>&emsp;-&emsp;
+        <a href="#/safetyManagement/index" class="font-black">安全管理</a>&emsp;-&emsp;
+        密保问题
+    </div>
+    <ul class="row mt-20">
+        <li class="col-md-2 border-ccc menu-p">
+            <h4><b>交易管理</b></h4>
+            <P><a href="#/myOrder/historyOrder">我的订单</a></P>
+            <P><a href="#/clientOrder/historyOrder">我的客户订单</a></P>
+            <P>我的积分</P>
+            <P>我的优惠券</P>
+            <P>账户余额</P>
+            <P>售后服务</P>
+            <div class="border-b"></div>
+            <h4 class="mt-20"><b>会员中心</b></h4>
+            <p><a href="#/personInfo/index">个人信息</a></p>
+            <p class="bg-blue"><a href="#/safetyManagement/index">安全管理</a></p>
+            <p><a href="#/address/index">地址管理</a></p>
+            <p>物流点管理</p>
+        </li>
+        <li class="col-md-9 ml-20 font-13 question">
+            <p>为了避免遗忘，请您填写真实信息，这将帮您以后通过回答问题来找回密码。</p>
+            <ul class="issue">
+                <li>问题一：
+                    <select class="slt">
+                        <option></option>
+                        <option>您父亲的名字叫什么？</option>
+                        <option>您母亲的名字叫什么？</option>
+                        <option>您初恋的名字叫什么？</option>
+                        <option>您老板的名字叫什么？</option>
+                        <option>您初三班主任的名字叫什么？</option>
+                        <option>您父亲的生日是什么时候？</option>
+                        <option>您母亲的生日是什么时候？</option>
+                        <option>您初恋的生日是什么时候？</option>
+                        <option>您老板的生日是什么时候？</option>
+                        <option>您初二班主任的生日是什么时候？</option>
+                    </select>
+                </li>
+                <li>&emsp;答案： <input type="text"></li>
+                <li>问题二：
+                    <select class="slt">
+                        <option></option>
+                        <option>您父亲的名字叫什么？</option>
+                        <option>您母亲的名字叫什么？</option>
+                        <option>您初恋的名字叫什么？</option>
+                        <option>您老板的名字叫什么？</option>
+                        <option>您初三班主任的名字叫什么？</option>
+                        <option>您父亲的生日是什么时候？</option>
+                        <option>您母亲的生日是什么时候？</option>
+                        <option>您初恋的生日是什么时候？</option>
+                        <option>您老板的生日是什么时候？</option>
+                        <option>您初二班主任的生日是什么时候？</option>
+                    </select>
+                </li>
+                <li>&emsp;答案： <input type="text"></li>
+                <li>问题三：
+                    <select class="slt">
+                        <option></option>
+                        <option>您父亲的名字叫什么？</option>
+                        <option>您母亲的名字叫什么？</option>
+                        <option>您初恋的名字叫什么？</option>
+                        <option>您老板的名字叫什么？</option>
+                        <option>您初三班主任的名字叫什么？</option>
+                        <option>您父亲的生日是什么时候？</option>
+                        <option>您母亲的生日是什么时候？</option>
+                        <option>您初恋的生日是什么时候？</option>
+                        <option>您老板的生日是什么时候？</option>
+                        <option>您初二班主任的生日是什么时候？</option>
+                    </select>
+                </li>
+                <li>&emsp;答案： <input type="text"></li>
+                <li>
+                    <a class="btn btn-info ml-50">确定</a>
+                    <a class="btn btn-default ml-20">取消</a>
+                </li>
+            </ul>
+
+
+        </li>
+    </ul>
+</div>
