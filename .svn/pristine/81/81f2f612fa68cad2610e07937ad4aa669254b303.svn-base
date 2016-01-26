@@ -34,7 +34,7 @@
                                 <option value="100">50人到100人</option>
                                 <option value="500">100人到500人</option>
                                 <option value="1500">500人到1500人</option>
-                                <option value="0">1500人以上</option>
+                                <option value="other">1500人以上</option>
                             </select>
                         </td>
                         <td>

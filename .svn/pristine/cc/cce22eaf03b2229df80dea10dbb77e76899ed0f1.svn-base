@@ -3,24 +3,27 @@
  */
 'use strict'
 define([], function () {
-        var merchantsIndexModule = angular.module("merchantsPersonalModel", []);
+        var merchantsIndexModule = angular.module("merchantsCompanyModel", []);
 
-        merchantsIndexModule.controller('merchantsPersonalCtrl', ['$scope', '$ui', '$request', function ($scope, $ui, $request) {
+        merchantsIndexModule.controller('merchantsCompanyCtrl', ['$scope', '$ui', '$request', function ($scope, $ui, $request) {
 
             $scope.merchant = {};
-            $scope.merchant.type = "personal";
+
+            $scope.merchant.type = "company";
+            var date = new Date();
+            $scope.merchant.CompanyTime = date.format('yyyy-MM-dd');
             $scope.merchant.images = [];
 
             $scope.apply = function () {
                 var data = angular.copy($scope.merchant);
+
                 if (data.images.length == 0) {
                     $ui.error("请上传证件.");
                     return false;
                 }
-
                 var date = new Date();
                 data.applyTime = date.format('yyyy-MM-dd hh:mm:ss');
-                data.state = 0;
+
                 $request.post('api/?model=merchant&action=apply', data, function (response) {
                     if (response.success) {
                         $ui.notify('您的申请已提交工作人员审核,处理结果我们会在第一时间通知您，请保持电话畅通！', '提示', function () {
@@ -40,11 +43,11 @@ define([], function () {
                 uploadUrl: 'http://93myb.com/admin/api/?model=merchant&action=upload', //文件上传地址
                 uploadAsync: false,
                 uploadExtraData: {},
-                maxFileCount: 2,
-                allowedFileExtensions: ["jpg", "jpeg", "png"],//允许文件后缀名
+                maxFileCount: 3,
+                allowedFileExtensions: ["jpg", "jpeg", "gif", "png", "bmp", "pic", "doc", "docx", "rar", "xls", "xlsx", "TIFF", "paf", "zip"],//允许文件后缀名
                 overwriteInitial: false,
                 maxFileSize: 2048,//单个文件最大值 (KB)
-                maxFilesNum: 2, //单次最多上传文件数
+                maxFilesNum: 3, //单次最多上传文件数
                 showCaption: false,//是否显示输入框
                 showPreview: true,//是否显示预览
 
@@ -66,13 +69,16 @@ define([], function () {
             });
 
             $('#fileupload').on('fileloaded', function (event, file, previewId, index, reader) {
-                $(".file-caption-name").width(195);
+                $(".file-caption-name").width(180);
                 $(".file-preview-image").height(110);
                 $(".file-preview-frame").height(110);
-
             });
-            $('#fileupload').on('filebatchuploadsuccess', function (event, data, previewId, index) {
 
+            $('#fileupload').on('filecleared', function (event) {
+                $scope.merchant.images = [];
+            });
+
+            $('#fileupload').on('filebatchuploadsuccess', function (event, data, previewId, index) {
                 if (data.response.success) {
                     for (var i = 0; i < data.response.paths.length; i++) {
                         $scope.merchant.images.push(data.response.paths[i]);

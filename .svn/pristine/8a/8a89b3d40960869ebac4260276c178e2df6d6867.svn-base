@@ -1,0 +1,59 @@
+<div class="box box-info" style="border:0">
+    <div class="box-header with-border text-center" style="background-color: #E8E8E8">
+        <h3 class="box-title"><b> 加盟审核------企业</b></h3>
+        <i style="cursor:pointer" class="fa fa-close pull-right" ng-click="cancel()"></i>
+    </div>
+    <div class="box-body">
+        <div class="col-md-3">
+            <dl>
+                <dt style="padding: 10px 0px">公司名称:</dt>
+                <dd ng-bind="merchant.companyName"></dd>
+
+                <dt style="padding: 10px 0px">公司类型:</dt>
+                <dd ng-bind="merchant.companyType"></dd>
+
+                <dt style="padding: 10px 0px">法人代表:</dt>
+                <dd ng-bind="merchant.leader"></dd>
+
+                <dt style="padding: 10px 0px">公司规模:</dt>
+                <dd ng-bind="merchant.companyScale"></dd>
+
+                <dt style="padding: 10px 0px">注册帐号:</dt>
+                <dd ng-bind="merchant.username"></dd>
+
+                <dt style="padding: 10px 0px">申请人:</dt>
+                <dd ng-bind="merchant.applyUser"></dd>
+
+                <dt style="padding: 10px 0px">申请人职位:</dt>
+                <dd ng-bind="merchant.applyUserOffice"></dd>
+
+                <dt style="padding: 10px 0px">联系电话:</dt>
+                <dd ng-bind="merchant.telphone"></dd>
+
+                <dt style="padding: 10px 0px">成立时间:</dt>
+                <dd ng-bind="merchant.CompanyTime"></dd>
+
+                <dt style="padding: 10px 0px">联系地址:</dt>
+                <dd ng-bind="merchant.address"></dd>
+            </dl>
+        </div>
+        <div class="col-md-9 text-center">
+            <dt>证件(点击可查看大图)</dt>
+            <p style="padding: 15px" ng-repeat="item in merchant.images">
+                <img width="500px" style="cursor: pointer" title="点击查看大图"
+                     ng-src="{{getImage(item)}}" ng-click="openImage(item)">
+            </p>
+        </div>
+    </div>
+    <div class="box-footer text-center">
+        <button ng-if="merchant.state==0" type="button" class="btn btn-success" ng-click="submitForm(1)">
+            <i class="fa fa-check"> </i> 审核通过
+        </button>
+        <button type="button" ng-if="merchant.state==0" class="btn btn-danger" ng-click="submitForm(2)">
+            <i class="fa fa-close"> </i> 拒绝
+        </button>
+        <button type="button" class="btn bg-navy" ng-click="cancel()">
+            <i class="fa fa-close"> </i> 关闭
+        </button>
+    </div>
+</div>

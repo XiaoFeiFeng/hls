@@ -1,0 +1,22 @@
+<div class="box" style="border:0px;" ng-controller="merchantAuditPersonalCtrl">
+    <div class="box-header">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default" ng-click="initGridData(0)">
+                <i class="fa fa-navicon"></i> 待审核
+            </button>
+            <button type="button" class="btn btn-default" ng-click="initGridData(1)">
+                <i class="fa fa-navicon"></i> 已通过
+            </button>
+            <button type="button" class="btn btn-default" ng-click="initGridData(2)">
+                <i class="fa fa-navicon"></i> 已拒绝
+            </button>
+        </div>
+    </div>
+    <div class="box-body">
+        <hls-grid grid-options="gridOptions"></hls-grid>
+    </div>
+    <div class="box-footer">
+        <hls-pagination total-items="totalItems" ng-model="currentPage" class="pagination-sm"
+                        page-size="pageSize" ng-change="pageChange()"></hls-pagination>
+    </div>
+</div>
