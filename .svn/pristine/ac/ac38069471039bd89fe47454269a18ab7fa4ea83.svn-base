@@ -1,14 +1,14 @@
 <div class="window-title clearfix">
-    <p class="title-font">添加地址</p>
+    <p class="title-font">修改地址</p>
     <i class="fa fa-close title-close" ng-click="cancel()"></i>
 </div>
 <ul class="mt-20">
-   <li class="clearfix">
-       <div class="content-labar"><span class="font-red">*</span> 收货人姓名：</div>
-       <div class="content-input">
-           <input type="text" class="form-control" ng-bing="name">
-       </div>
-   </li>
+    <li class="clearfix">
+        <div class="content-labar"><span class="font-red">*</span> 收货人姓名：</div>
+        <div class="content-input">
+            <input type="text" class="form-control" ng-model="result.name">
+        </div>
+    </li>
     <li class="clearfix">
         <div class="content-labar"><span class="font-red">*</span> 所在地区：</div>
         <div class="content-input">
@@ -18,25 +18,25 @@
     <li class="clearfix">
         <div class="content-labar"><span class="font-red">*</span> 所在地区：</div>
         <div class="content-textarea">
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="3" ng-model="result.detailed"></textarea>
         </div>
     </li>
     <li class="clearfix">
         <div class="content-labar"><span class="font-red">*</span> 电话号码：</div>
         <div class="content-input">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" ng-model="result.tel">
         </div>
     </li>
     <li class="clearfix">
         <div class="content-labar"></div>
         <div class="content-input">
-            <input type="checkbox"> 设置为默认地址
+            <input type="checkbox" ng-model="result.is_default"> 设置为默认地址
         </div>
     </li>
     <li class="clearfix">
         <div class="content-labar"></div>
         <div class="content-input">
-            <button class="btn btn-info">添加</button>
+            <button class="btn btn-info" ng-click="save()">保存</button>
             <button class="btn btn-default ml-20" ng-click="cancel()">取消</button>
         </div>
     </li>
